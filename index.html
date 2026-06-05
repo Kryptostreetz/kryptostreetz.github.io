@@ -1,10 +1,179 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KryptoStreetz</title>
-  </head>
-  <body>
-    <h1 style="text-align: center;">Welcome to KryptoStreetz</h1>
-  <p>Chess x Crypto x Real Talk</p>
-  </body>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d0d0d;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #00eaff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1526378722484-cc5cddf3c6b0?auto=format&fit=crop&w=1600&q=80')
+                center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px black;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            text-shadow: 0 0 10px black;
+        }
+
+        .cta-btn {
+            margin-top: 25px;
+            padding: 14px 28px;
+            background: #00eaff;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background: #00bcd4;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #111;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>KryptoStreetz</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#chess">Chess</a>
+            <a href="#crypto">Crypto</a>
+            <a href="#realtalk">Real Talk</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>Chess × Crypto × Real Talk</h2>
+        <p>The movement. The mindset. The street‑level intelligence for the digital age.</p>
+
+        <!-- YOUR BUTTON TO kryptostreetz.sol -->
+        <a class="cta-btn" href="https://kryptostreetz.sol" target="_blank">
+            Visit KryptoStreetz.sol
+        </a>
+    </div>
+
+    <!-- About -->
+    <section id="about">
+        <h3>About KryptoStreetz</h3>
+        <p>
+            KryptoStreetz is where strategy meets culture.  
+            We break down the game — on the board, in the markets, and in real life.  
+            Built for thinkers, grinders, and anyone leveling up mentally and financially.
+        </p>
+    </section>
+
+    <!-- Chess -->
+    <section id="chess">
+        <h3>Chess</h3>
+        <p>
+            Chess teaches patience, discipline, and long‑term vision.  
+            We use the board as a blueprint for decision‑making, life strategy, and personal growth.
+        </p>
+    </section>
+
+    <!-- Crypto -->
+    <section id="crypto">
+        <h3>Crypto</h3>
+        <p>
+            From blockchain basics to real‑world applications,  
+            KryptoStreetz breaks down the digital economy in a way the streets can understand.
+        </p>
+    </section>
+
+    <!-- Real Talk -->
+    <section id="realtalk">
+        <h3>Real Talk</h3>
+        <p>
+            No fluff. No filters.  
+            Just honest conversations about money, mindset, and the moves that matter.
+        </p>
+    </section>
+
+    <footer>
+        © 2026 KryptoStreetz — All Rights Reserved
+    </footer>
+
+</body>
 </html>
