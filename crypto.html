@@ -149,6 +149,40 @@ p {
      section p, section h3 {
     text-shadow: 0 0 6px rgba(255,255,255,0.7);
 }
+    /* MOBILE LAYOUT FIXES */
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .crypto-layout {
+        display: block;
+        width: 100%;
+    }
+
+    .crypto-summary,
+    .crypto-content {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .price-box {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 16px;
+    }
 
 </style>
 </head>
