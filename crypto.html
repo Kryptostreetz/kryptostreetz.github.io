@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KryptoStreetz | Live Crypto Prices</title>
+<style>
+    body {
+        background: #0d0d0d;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .price-box {
+        background: #1a1a1a;
+        padding: 20px;
+        margin: 20px auto;
+        width: 300px;
+        border-radius: 10px;
+        font-size: 24px;
+        border: 1px solid #333;
+    }
+
+    .label {
+        font-size: 18px;
+        color: #aaa;
+    }
+
+    .green {
+        color: #00ff88;
+    }
+
+    .red {
+        color: #ff4444;
+    }
+</style>
+</head>
+<body>
+
+<h1>Live Market Prices</h1>
+
+<div class="price-box">
+    <div class="label">Bitcoin (BTC)</div>
+    <div id="btc" class="price">$0.00</div>
+</div>
+
+<div class="price-box">
+    <div class="label">Ethereum (ETH)</div>
+    <div id="eth" class="price">$0.00</div>
+</div>
+
+<div class="price-box">
+    <div class="label">Solana (SOL)</div>
+    <div id="sol" class="price">$0.00</div>
+</div>
+
+<div class="price-box">
+    <div class="label">Gold (XAU)</div>
+    <div id="gold" class="price">$0.00</div>
+</div>
+
+<script>
+async function fetchPrices() {
+    try {
+        const cryptoRes = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd");
+        const crypto = await cryptoRes.json();
+
+        const goldRes = await fetch("https://metals-api.com/api/latest?access_key=demo&symbols=XAU");
+        const gold = await goldRes.json();
+
+        updatePrice("btc", crypto.bitcoin.usd);
+        updatePrice("eth", crypto.ethereum.usd);
+        updatePrice("sol", crypto.solana.usd);
+        updatePrice("gold", gold.rates.XAU);
+    } catch (e) {
+        console.log("Error fetching prices", e);
+    }
+}
+
+function updatePrice(id, newPrice) {
+    const el = document.getElementById(id);
+    const oldPrice = parseFloat(el.dataset.old || newPrice);
+
+    el.innerText = "$" + newPrice.toLocaleString();
+
+    if (newPrice > oldPrice) {
+        el.classList.add("green");
+        el.classList.remove("red");
+    } else if (newPrice < oldPrice) {
+        el.classList.add("red");
+        el.classList.remove("green");
+    }
+
+    el.dataset.old = newPrice;
+}
+
+fetchPrices();
+setInterval(fetchPrices, 5000);
+</script>
+
+</body>
+</html>
