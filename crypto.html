@@ -112,6 +112,31 @@ body::before {
     background: rgba(0,0,0,0.55);
     transform: translateY(-2px);
 }
+    .social-bar {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    transition: 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    filter: invert(1) drop-shadow(0 0 5px #00eaff);
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
 
 </style>
 </head>
