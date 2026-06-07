@@ -44,25 +44,28 @@
     align-items: center;
     gap: 1px;
 }
-    .logo-img {
-    height: 45px; /* adjust this number to make it smaller or larger */
+
+.logo-img {
+    height: 45px;
     width: auto;
     object-fit: contain;
 }
-        .logo-link {
-    display: flex;
-    align-items: center;
+
+.logo-link {
+    display: inline-block; /* FIXED */
     text-decoration: none;
 }
+    
 </style>
 </head>
 <body>
-    <a href="https://kryptostreetz.github.io" class="logo-link">
     <div class="logo-container">
+    <a href="https://kryptostreetz.github.io" class="logo-link">
         <img src="Copilot_20260605_171229.png" alt="Krypto logo" class="logo-img">
-        <img src="Copilot_20260605_171418.png" alt="Streetz logo" class="logo-img">
-    </div>
-            </a>
+    </a>
+
+    <img src="Copilot_20260605_171418.png" alt="Streetz logo" class="logo-img">
+</div>
 
 <h1>Live Market Prices</h1>
 
