@@ -74,8 +74,27 @@
     display: inline-block; /* FIXED */
     text-decoration: none;
 }
+    .news-card {
+    background: rgba(0,0,0,0.35);
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(4px);
+    transition: 0.25s;
+}
+
+.news-card a {
+    color: #00eaff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.news-card:hover {
+    background: rgba(0,0,0,0.55);
+    transform: translateY(-2px);
+}
+    </style>
     
-</style>
 </head>
 <div class="crypto-layout">
 
@@ -86,7 +105,7 @@
     <p id="news-summary">Loading latest crypto summary...</p>
 
     <h4>Top Stories</h4>
-    <ul id="top-stories"></ul>
+    <div id="top-stories"></div>
 
     <a href="https://decrypt.co/news" target="_blank" style="color:#00eaff;">
         → View full news on Decrypt
@@ -165,9 +184,10 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://decrypt.co/feed")
       // Top 3 stories
       const topStories = document.getElementById("top-stories");
       data.items.slice(0, 3).forEach(item => {
-          const li = document.createElement("li");
-          li.innerHTML = `<a href="${item.link}" target="_blank" style="color:#00eaff;">${item.title}</a>`;
-          topStories.appendChild(li);
+          const div = document.createElement("div");
+div.className = "news-card";
+div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+topStories.appendChild(div);
       });
   })
   .catch(err => {
