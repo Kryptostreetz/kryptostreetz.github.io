@@ -103,20 +103,28 @@
 <script>
 window.onload = function() {
 
-    async function fetchPrices() {
-        try {
-            const cryptoRes = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,gold&vs_currencies=usd");
-            const crypto = await cryptoRes.json();
+   async function fetchPrices() {
+    try {
+        const cryptoRes = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd");
+        const crypto = await cryptoRes.json();
 
-            updatePrice("btc", crypto.bitcoin.usd);
-            updatePrice("eth", crypto.ethereum.usd);
-            updatePrice("sol", crypto.solana.usd);
-            updatePrice("gold", crypto.gold.usd);
+        const goldRes = await fetch("https://api.goldapi.io/api/XAU/USD", {
+            headers: {
+                "x-access-token": "goldapi-io-demo-key",
+                "Content-Type": "application/json"
+            }
+        });
+        const gold = await goldRes.json();
 
-        } catch (e) {
-            console.log("Error fetching prices", e);
-        }
+        updatePrice("btc", crypto.bitcoin.usd);
+        updatePrice("eth", crypto.ethereum.usd);
+        updatePrice("sol", crypto.solana.usd);
+        updatePrice("gold", gold.price);
+
+    } catch (e) {
+        console.log("Error fetching prices", e);
     }
+}
 
     function updatePrice(id, newPrice) {
         const el = document.getElementById(id);
