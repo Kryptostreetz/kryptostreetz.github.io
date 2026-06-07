@@ -77,13 +77,26 @@
     
 </style>
 </head>
-<body>
-    <div class="logo-container">
-    <a href="https://kryptostreetz.github.io" class="logo-link">
-        <img src="Copilot_20260605_171229.png" alt="Krypto logo" class="logo-img">
- <img src="Copilot_20260605_171418.png" alt="Streetz logo" class="logo-img">
-          </a>
+<div class="crypto-layout">
+
+    <!-- LEFT SIDE SUMMARY -->
+    <div class="crypto-summary">
+    <h3>Market Snapshot</h3>
+
+    <p id="news-summary">Loading latest crypto summary...</p>
+
+    <h4>Top Stories</h4>
+    <ul id="top-stories"></ul>
+
+    <a href="https://decrypt.co/news" target="_blank" style="color:#00eaff;">
+        → View full news on Decrypt
+    </a>
 </div>
+
+    <!-- RIGHT SIDE (YOUR EXISTING PRICE WIDGETS) -->
+    <div class="crypto-content">
+        <!-- Your BTC, ETH, SOL, GOLD widgets go here -->
+    </div>
 
 <h1>Live Market Prices</h1>
 
@@ -139,6 +152,27 @@ window.onload = function() {
     fetchPrices();
     setInterval(fetchPrices, 5000);
 };
+</script>
+    <script>
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://decrypt.co/feed")
+  .then(res => res.json())
+  .then(data => {
+      // Auto-updating summary (first article description)
+      const first = data.items[0];
+      document.getElementById("news-summary").innerHTML =
+          first.description.replace(/<[^>]+>/g, "").slice(0, 200) + "...";
+
+      // Top 3 stories
+      const topStories = document.getElementById("top-stories");
+      data.items.slice(0, 3).forEach(item => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="${item.link}" target="_blank" style="color:#00eaff;">${item.title}</a>`;
+          topStories.appendChild(li);
+      });
+  })
+  .catch(err => {
+      document.getElementById("news-summary").innerHTML = "Unable to load news right now.";
+  });
 </script>
 
 </body>
