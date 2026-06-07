@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>KryptoStreetz | Live Crypto Prices</title>
+
 <style>
-    @media (max-width: 768px) {
+
+/* MOBILE BACKGROUND */
+@media (max-width: 768px) {
     body {
-        background: url(Mobile Version Crypto Page.png) no-repeat center center fixed;
+        background: url("Mobile Version Crypto Page.png") no-repeat center center fixed;
         background-size: cover;
-        </style>
-</head>
-</body>
-    
+    }
 }
 
-    body {
-    background: url(Copilot_20260607_105747.png) no-repeat center center fixed;
+/* DESKTOP BACKGROUND */
+body {
+    background: url("Copilot_20260607_105747.png") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -23,7 +24,9 @@
     text-align: center;
     padding: 40px;
 }
-    body::before {
+
+/* DARK OVERLAY */
+body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -34,34 +37,33 @@
     z-index: -1;
 }
 
-    h1 {
-        font-size: 40px;
-        margin-bottom: 20px;
-    }
+/* HEADERS */
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
 
-    .price-box {
-        background: #1a1a1a;
-        padding: 20px;
-        margin: 20px auto;
-        width: 300px;
-        border-radius: 10px;
-        font-size: 24px;
-        border: 1px solid #333;
-    }
+/* PRICE BOXES */
+.price-box {
+    background: #1a1a1a;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 10px;
+    font-size: 24px;
+    border: 1px solid #333;
+}
 
-    .label {
-        font-size: 18px;
-        color: #aaa;
-    }
+.label {
+    font-size: 18px;
+    color: #aaa;
+}
 
-    .green {
-        color: #00ff88;
-    }
+.green { color: #00ff88; }
+.red { color: #ff4444; }
 
-    .red {
-        color: #ff4444;
-    }
-    .logo-container {
+/* LOGO */
+.logo-container {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -74,10 +76,12 @@
 }
 
 .logo-link {
-    display: inline-block; /* FIXED */
+    display: inline-block;
     text-decoration: none;
 }
-    .news-card {
+
+/* NEWS CARDS */
+.news-card {
     background: rgba(0,0,0,0.35);
     padding: 12px 16px;
     border-radius: 10px;
@@ -96,9 +100,12 @@
     background: rgba(0,0,0,0.55);
     transform: translateY(-2px);
 }
-    </style>
-    
+
+</style>
 </head>
+
+<body>
+
 <div class="crypto-layout">
 
     <!-- LEFT SIDE SUMMARY -->
