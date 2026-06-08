@@ -309,25 +309,21 @@ section, section p, section h3 {
     </section>
     <section id="contact">
     <h3>Contact Me</h3>
-    <form action="https://formsubmit.co/kryptostreetzsol@gmail.com" method="POST" class="contact-form">
+    <form name="contact" method="POST" data-netlify="true" class="contact-form">
+    <input type="hidden" name="form-name" value="contact">
+
+    <label>Your Name</label>
+    <input type="text" name="name" required>
+
+    <label>Your Email</label>
+    <input type="email" name="email" required>
+
+    <label>Your Message</label>
+    <textarea name="message" placeholder="Send Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
         
-        <!-- Prevent spam -->
-        <input type="hidden" name="_captcha" value="false">
-
-        <!-- Redirect after sending -->
-        <input type="hidden" name="_next" value="https://kryptostreetz.github.io/thankyou.html">
-
-        <label>Your Name</label>
-        <input type="text" name="name" required>
-
-        <label>Your Email</label>
-        <input type="email" name="email" required>
-
-        <label>Your Message</label>
-        <textarea name="message" placeholder="Send Message"></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
 </section>
     <div class="social-bar">
     <a href="https://twitter.com/KryptoStreetz" target="_blank">
