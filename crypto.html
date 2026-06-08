@@ -45,9 +45,60 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 20px;        /* reduced from 40px */
+    padding: 20px;        /* safe desktop padding */
     overflow-x: hidden;   /* prevents horizontal scrolling */
     box-sizing: border-box;
+}
+
+/* MOBILE BACKGROUND + MOBILE FIXES */
+@media (max-width: 768px) {
+    body {
+        background: url("Mobile Version Crypto Page.png") no-repeat center center fixed;
+        background-size: cover;
+        padding: 10px;        /* consistent mobile padding */
+        font-size: 18px;
+        text-align: center;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    .crypto-layout {
+        display: block;
+        width: 100%;
+    }
+
+    .crypto-summary,
+    .crypto-content {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .price-box {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h3, h4 {
+        font-size: 22px;
+    }
+
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 /* DARK OVERLAY */
@@ -60,16 +111,6 @@ body::before {
     height: 100%;
     background: rgba(0,0,0,0.45);
     z-index: -1;
-}
-
-/* MOBILE FIXES */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-        background: url("Mobile Version Crypto Page.png") no-repeat center center fixed;
-        background-size: cover;
-        font-size: 18px;
-    }
 }
 
 /* PRICE BOXES */
@@ -124,12 +165,14 @@ body::before {
 .news-card:hover {
     background: rgba(0,0,0,0.55);
     transform: translateY(-2px);
-    }
+}
+
 p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .social-bar {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.social-bar {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -142,7 +185,7 @@ p {
 .social-icon {
     height: 28px;
     width: 28px;
-    filter: invert(1); /* makes icons white for dark theme */
+    filter: invert(1);
     transition: 0.3s;
 }
 
@@ -151,69 +194,16 @@ p {
     transform: scale(1.15);
 }
 
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+    margin-top: 40px;
+    color: #777;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #111;
-            margin-top: 40px;
-            color: #777;
-        }
-     section p, section h3 {
+section p, section h3 {
     text-shadow: 0 0 6px rgba(255,255,255,0.7);
-}
-    /* MOBILE LAYOUT FIXES */
-@media (max-width: 768px) {
-
-    body {
-        padding: 15px;
-        text-align: center;
-    }
-
-    .crypto-layout {
-        display: block;
-        width: 100%;
-    }
-
-    .crypto-summary,
-    .crypto-content {
-        width: 100%;
-        margin-bottom: 25px;
-    }
-
-    .price-box {
-        width: 90%;
-        max-width: 350px;
-    }
-
-    header {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    nav a {
-        margin-left: 10px;
-        font-size: 16px;
-    }
-    body {
-    font-size: 18px;
-}
-
-h1 {
-    font-size: 32px;
-}
-
-h3, h4 {
-    font-size: 22px;
-}
-    body {
-  overflow-x: hidden;
-}
-
-* {
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 </style>
