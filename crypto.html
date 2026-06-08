@@ -298,27 +298,38 @@ window.onload = function() {
 };
 </script>
     <script>
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://decrypt.co/feed")
-  .then(res => res.json())
-  .then(data => {
-      // Auto-updating summary (first article description)
-      const first = data.items[0];
-      document.getElementById("news-summary").innerHTML =
-          first.description.replace(/<[^>]+>/g, "").slice(0, 200) + "...";
+function loadNews() {
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://decrypt.co/feed")
+      .then(res => res.json())
+      .then(data => {
+          // Auto-updating summary (first article description)
+          const first = data.items[0];
+          document.getElementById("news-summary").innerHTML =
+              first.description.replace(/<[^>]+>/g, "").slice(0, 200) + "...";
 
-      // Top 3 stories
-      const topStories = document.getElementById("top-stories");
-      data.items.slice(0, 3).forEach(item => {
-          const div = document.createElement("div");
-div.className = "news-card";
-div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
-topStories.appendChild(div);
+          // Top 3 stories
+          const topStories = document.getElementById("top-stories");
+          topStories.innerHTML = ""; // clear old stories
+
+          data.items.slice(0, 3).forEach(item => {
+              const div = document.createElement("div");
+              div.className = "news-card";
+              div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+              topStories.appendChild(div);
+          });
+      })
+      .catch(err => {
+          document.getElementById("news-summary").innerHTML = "Unable to load news right now.";
       });
-  })
-  .catch(err => {
-      document.getElementById("news-summary").innerHTML = "Unable to load news right now.";
-  });
+}
+
+// Load immediately
+loadNews();
+
+// Refresh every 5 minutes (300,000 ms)
+setInterval(loadNews, 300000);
 </script>
+    
     <div class="social-bar">
     <a href="https://twitter.com/KryptoStreetz" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="Twitter" class="social-icon">
