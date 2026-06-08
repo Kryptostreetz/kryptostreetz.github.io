@@ -217,6 +217,17 @@ body {
 section, section p, section h3 {
     color: white;
 }
+        textarea {
+    width: 320px;
+    height: 120px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    resize: none;
+}
     </style>
 </head>
 
@@ -313,7 +324,7 @@ section, section p, section h3 {
         <input type="email" name="email" required>
 
         <label>Your Message</label>
-        <textarea name="message" rows="5" required></textarea>
+        <textarea placeholder="Send Message"></textarea>
 
         <button type="submit">Send Message</button>
     </form>
