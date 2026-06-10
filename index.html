@@ -69,7 +69,11 @@ body {
 .dropdown:hover .dropbtn {
     color: #00eaff;
 }
-
+        .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
         /* Header */
        header {
     display: flex;
@@ -308,32 +312,12 @@ section, section p, section h3 {
             Just honest conversations about money, mindset, and the moves that matter.
         </p>
     </section>
-<section id="contact" style="padding: 60px 0; display: flex; justify-content: center;">
-  <div style="
-      width: 100%;
-      max-width: 480px;
-      background: rgba(0,0,0,0.65);
-      padding: 24px 22px 26px;
-      border-radius: 14px;
-      border: 1px solid #00ff88;
-      box-shadow: 0 0 25px rgba(0,255,136,0.18);
-      backdrop-filter: blur(6px);
-  ">
-    <h3 style="
-        margin: 0 0 18px;
-        color: #00ff88;
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-        text-align: center;
-    ">
-      Contact Me
-    </h3>
-
-  <iframe 
-  src="contact-form.html" 
-  style="width:100%; height:350px; border:none;">
-</iframe>
-
+<section id="contact" style="padding: 60px 0;">
+  <div class="container" style="display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 480px; background: rgba(0,0,0,0.65); padding: 24px 22px 26px; border-radius: 14px; border: 1px solid #00ff88; box-shadow: 0 0 25px rgba(0,255,136,0.18); backdrop-filter: blur(6px);">
+      <h3 style="margin: 0 0 18px; color: #00ff88; font-size: 1.5rem; letter-spacing: 1px; text-align: center;">Contact Me</h3>
+      <iframe src="contact-form.html" style="width: 100%; height: 350px; border: none;"></iframe>
+    </div>
   </div>
 </section>
 
