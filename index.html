@@ -308,7 +308,88 @@ section, section p, section h3 {
             Just honest conversations about money, mindset, and the moves that matter.
         </p>
     </section>
+<section id="contact" style="padding: 60px 0; display: flex; justify-content: center;">
+  <div style="
+      width: 100%;
+      max-width: 480px;
+      background: rgba(0,0,0,0.65);
+      padding: 24px 22px 26px;
+      border-radius: 14px;
+      border: 1px solid #00ff88;
+      box-shadow: 0 0 25px rgba(0,255,136,0.18);
+      backdrop-filter: blur(6px);
+  ">
+    <h3 style="
+        margin: 0 0 18px;
+        color: #00ff88;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        text-align: center;
+    ">
+      Contact Me
+    </h3>
 
+    <form id="contact-form">
+      <label style="display:block; color:#ccc; margin-bottom:6px; font-size:0.9rem;">
+        Email
+      </label>
+      <input 
+        type="email" 
+        name="email" 
+        required
+        style="
+          width:100%;
+          padding:10px 12px;
+          border-radius:8px;
+          border:1px solid #00ff88;
+          background:#000;
+          color:#fff;
+          margin-bottom:14px;
+        "
+      />
+
+      <label style="display:block; color:#ccc; margin-bottom:6px; font-size:0.9rem;">
+        Message
+      </label>
+      <textarea 
+        name="message" 
+        required
+        rows="4"
+        style="
+          width:100%;
+          padding:10px 12px;
+          border-radius:8px;
+          border:1px solid #00ff88;
+          background:#000;
+          color:#fff;
+          margin-bottom:16px;
+          resize:vertical;
+        "
+      ></textarea>
+
+      <button type="submit" style="
+        width:100%;
+        padding:10px 0;
+        border-radius:8px;
+        border:none;
+        background:#00ff88;
+        color:#000;
+        font-weight:600;
+        letter-spacing:0.5px;
+        cursor:pointer;
+      ">
+        Send Message
+      </button>
+
+      <p id="form-status" style="margin-top:12px; font-size:0.9rem; color:#00ff88; display:none;">
+        Message sent. Thank you.
+      </p>
+      <p id="form-error" style="margin-top:12px; font-size:0.9rem; color:#ff5c5c; display:none;">
+        Something went wrong. Please try again.
+      </p>
+    </form>
+  </div>
+</section>
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
   e.preventDefault();
