@@ -388,15 +388,18 @@ window.addEventListener("load", function() {
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("email", document.getElementById("email").value);
-    formData.append("message", document.getElementById("message").value);
+    const formData = new URLSearchParams();
+formData.append("email", document.getElementById("email").value);
+formData.append("message", document.getElementById("message").value);
 
-    fetch("https://script.google.com/macros/s/AKfycby1yPua73KaQXqOojBzuqDPvkBw113knRNjZtYWmCN87aXGYnodT2uTqmzXUF5PHf1Y/exec", {
-      method: "POST",
-      mode: "no-cors",
-      body: formData
-    });
+fetch("https://script.google.com/macros/s/AKfycby1yPua73KaQXqOojBzuqDPvkBw113knRNjZtYWmCN87aXGYnodT2uTqmzXUF5PHf1Y/exec", {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: formData.toString()
+});
 
     document.getElementById("form-status").style.display = "block";
     form.reset();
