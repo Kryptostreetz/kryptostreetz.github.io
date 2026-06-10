@@ -398,20 +398,16 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   const email = form.email.value;
   const message = form.message.value;
 
-  // SEND REQUEST WITHOUT READING RESPONSE
+  const formData = new FormData();
+  formData.append("email", email);
+  formData.append("message", message);
+
   fetch("https://script.google.com/macros/s/AKfycby1yPua73KaQXqOojBzuqDPvkBw113knRNjZtYWmCN87aXGYnodT2uTqmzXUF5PHf1Y/exec", {
     method: "POST",
-    mode: "no-cors",   // REQUIRED FOR GOOGLE APPS SCRIPT
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      email: email,
-      message: message
-    })
+    mode: "no-cors",
+    body: formData
   });
 
-  // MANUAL SUCCESS MESSAGE (because no-cors hides the response)
   document.getElementById("form-status").style.display = "block";
   document.getElementById("form-error").style.display = "none";
 
