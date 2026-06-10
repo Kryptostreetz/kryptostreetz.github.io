@@ -398,33 +398,24 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   const email = form.email.value;
   const message = form.message.value;
 
-  try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbyzwIxEEjm9iUTggYtTr_c7MPch6Vk7tkawjfWixOVWDp35hYfAu1pNi80sparpuhMj/exec", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: email,
-        message: message
-      })
-    });
+  // SEND REQUEST WITHOUT READING RESPONSE
+  fetch("https://script.google.com/macros/s/AKfycbyzwIxEEjm9iUTggYtTr_c7MPch6Vk7tkawjfWixOVWDp35hYfAu1pNi80sparpuhMj/exec", {
+    method: "POST",
+    mode: "no-cors",   // REQUIRED FOR GOOGLE APPS SCRIPT
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      email: email,
+      message: message
+    })
+  });
 
-    const result = await res.json();
+  // MANUAL SUCCESS MESSAGE (because no-cors hides the response)
+  document.getElementById("form-status").style.display = "block";
+  document.getElementById("form-error").style.display = "none";
 
-    if (result.status === "success") {
-      document.getElementById("form-status").style.display = "block";
-      document.getElementById("form-error").style.display = "none";
-      form.reset();
-    } else {
-      document.getElementById("form-error").style.display = "block";
-      document.getElementById("form-status").style.display = "none";
-    }
-
-  } catch (err) {
-    document.getElementById("form-error").style.display = "block";
-    document.getElementById("form-status").style.display = "none";
-  }
+  form.reset();
 });
 </script>
 
