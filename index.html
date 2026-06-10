@@ -374,30 +374,32 @@ window.addEventListener('load', () => {
         channel: '1512595398294769727'
     })
 })
-</script>
-    <script>
-console.log("FORM SCRIPT LOADED");
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
-  e.preventDefault();
+<script>
+window.addEventListener("load", function() {
+  console.log("FORM SCRIPT LOADED AFTER PAGE LOAD");
 
-  const form = e.target;
-  const email = form.email.value;
-  const message = form.message.value;
+  const form = document.getElementById("contact-form");
+  if (!form) {
+    console.log("FORM NOT FOUND");
+    return;
+  }
 
-  const formData = new FormData();
-  formData.append("email", email);
-  formData.append("message", message);
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  fetch("https://script.google.com/macros/s/AKfycby1yPua73KaQXqOojBzuqDPvkBw113knRNjZtYWmCN87aXGYnodT2uTqmzXUF5PHf1Y/exec", {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
+    const formData = new FormData();
+    formData.append("email", document.getElementById("email").value);
+    formData.append("message", document.getElementById("message").value);
+
+    fetch("https://script.google.com/macros/s/AKfycby1yPua73KaQXqOojBzuqDPvkBw113knRNjZtYWmCN87aXGYnodT2uTqmzXUF5PHf1Y/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    });
+
+    document.getElementById("form-status").style.display = "block";
+    form.reset();
   });
-
-  document.getElementById("form-status").style.display = "block";
-  document.getElementById("form-error").style.display = "none";
-
-  form.reset();
 });
 </script>
 
