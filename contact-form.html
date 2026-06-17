@@ -15,26 +15,25 @@
 
     /* Center container */
     .form-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 24px; /* FIX: adds even spacing on both sides */
+}
 
-    /* Card */
-    .contact-form {
-      width: 100%;
-      max-width: 480px;
-      padding: 32px;
-      background: #0b0b0c;
-      border-radius: 14px;
-      border: 1px solid #0affff33;
-      box-shadow:
-        0 0 25px #00eaff22,
-        inset 0 0 12px #00eaff11;
-    }
-
+.contact-form {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto; /* ensures perfect centering */
+  padding: 32px;
+  background: #0b0b0c;
+  border-radius: 14px;
+  border: 1px solid #0affff33;
+  box-shadow:
+    0 0 25px #00eaff22,
+    inset 0 0 12px #00eaff11;
+}
     /* Labels */
     .contact-form label {
       margin-top: 18px;
