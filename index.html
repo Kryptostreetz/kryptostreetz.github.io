@@ -359,37 +359,6 @@ window.addEventListener('load', () => {
     })
 })
 </script>
-<script>
-window.addEventListener("load", function() {
-  console.log("FORM SCRIPT LOADED AFTER PAGE LOAD");
-
-  const form = document.getElementById("contact-form");
-  if (!form) {
-    console.log("FORM NOT FOUND");
-    return;
-  }
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const formData = new URLSearchParams();
-formData.append("email", document.getElementById("email").value);
-formData.append("message", document.getElementById("message").value);
-
-fetch("https://script.google.com/macros/s/AKfycbw8jS6M8IRO6yxjXS2fpuJZ0aR8G2eR2q2sWoUIvxD3LP3Ui9Xsh7HLynsaDT_DSp39/exec", {
-  method: "POST",
-  mode: "no-cors",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
-  },
-  body: formData.toString()
-});
-
-    document.getElementById("form-status").style.display = "block";
-    form.reset();
-  });
-});
-</script>
 
 </body>
 </html>
