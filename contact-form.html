@@ -105,23 +105,28 @@
 <body>
 
 <div class="form-wrapper">
-  <form action="https://formspree.io/f/mjgddpnz" method="POST" class="contact-form" id="contact-form">
+  <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+    <input type="hidden" name="access_key" value="670930a5-1b93-4fae-94d2-560050eb4500">
+    <input type="hidden" name="redirect" value="https://kryptostreetz.github.io/thankyou.html">
 
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="_replyto" required>
+    <label>Name</label>
+    <input type="text" name="name" required>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
+    <label>Email</label>
+    <input type="email" name="email" required>
 
-    <input type="hidden" name="_redirect" value="https://kryptostreetz.github.io/thank-you.html">
-    <input type="hidden" name="_subject" value="New message from your website">
+    <label>Message</label>
+    <textarea name="message" required></textarea>
 
     <button type="submit">Send Message</button>
-  </form>
+</form>
 </div>
+ <script>
+document.getElementById("contact-form").addEventListener("submit", function() {
+    setTimeout(() => this.reset(), 50);
+});
+</script>
 
 </body>
 </html>
