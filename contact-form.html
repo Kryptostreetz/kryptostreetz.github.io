@@ -3,44 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact Form</title>
+
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: "Inter", "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Center container */
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Wall Street Tech Card */
+    .contact-form {
+      width: 100%;
+      max-width: 460px;
+      padding: 32px;
+      background: #0b0b0c;
+      border-radius: 14px;
+
+      /* Subtle finance-style border + glow */
+      border: 1px solid #0affff33;
+      box-shadow:
+        0 0 25px #00eaff22,
+        inset 0 0 12px #00eaff11;
+    }
+
+    /* Labels */
+    .contact-form label {
+      margin-top: 14px;
+      margin-bottom: 6px;
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: #b8faff;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Inputs + Textarea */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      background: #0f0f11;
+      border: 1px solid #1b1b1d;
+      border-radius: 8px;
+      color: #e8e8e8;
+      font-size: 15px;
+      outline: none;
+      transition: 0.25s ease;
+    }
+
+    /* Focus glow */
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #00eaff;
+      box-shadow: 0 0 12px #00eaff88;
+    }
+
+    /* Medium message box */
+    textarea#message {
+      height: 180px;
+      resize: vertical;
+    }
+
+    /* Button — Wall Street Tech */
+    .contact-form button {
+      margin-top: 22px;
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #00eaff, #00bcd4);
+      color: #000;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      transition: 0.25s ease;
+      box-shadow: 0 0 14px #00eaff55;
+    }
+
+    /* Hover effect */
+    .contact-form button:hover {
+      background: linear-gradient(135deg, #00c2dd, #009fb8);
+      box-shadow: 0 0 22px #00eaffaa;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 
-<body style="background:#000; color:#fff; font-family:sans-serif; padding:20px;">
+<body>
 
-<form id="contact-form">
+<div class="form-wrapper">
+  <form action="https://formspree.io/f/mjgddpnz" method="POST" class="contact-form" id="contact-form">
 
-    <input id="name" type="text" name="name" placeholder="Your Name" required>
-    <input id="email" type="email" name="email" placeholder="Your Email" required>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
 
-    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="_replyto" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <input type="hidden" name="_redirect" value="https://kryptostreetz.github.io/thank-you.html">
+    <input type="hidden" name="_subject" value="New message from your website">
 
     <button type="submit">Send Message</button>
-
-</form>
-
-<p id="form-status" style="display:none; margin-top:10px; color:#0f0;">
-  Message sent successfully!
-</p>
-
-<script>
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const formData = new FormData();
-  formData.append("name", document.getElementById("name").value);
-  formData.append("email", document.getElementById("email").value);
-  formData.append("message", document.getElementById("message").value);
-
-  fetch("https://script.google.com/macros/s/AKfycbw8jS6M8IRO6yxjXS2fpuJZ0aR8G2eR2q2sWoUIvxD3LP3Ui9Xsh7HLynsaDT_DSp39/exec", {
-    method: "POST",
-    body: formData
-  })
-  .then(() => {
-    document.getElementById("form-status").style.display = "block";
-    document.getElementById("contact-form").reset();
-  });
-});
-</script>
+  </form>
+</div>
 
 </body>
 </html>
