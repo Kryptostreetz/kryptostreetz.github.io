@@ -22,15 +22,13 @@
       padding: 20px;
     }
 
-    /* Wall Street Tech Card */
+    /* Card */
     .contact-form {
       width: 100%;
-      max-width: 460px;
+      max-width: 480px;
       padding: 32px;
       background: #0b0b0c;
       border-radius: 14px;
-
-      /* Subtle finance-style border + glow */
       border: 1px solid #0affff33;
       box-shadow:
         0 0 25px #00eaff22,
@@ -39,7 +37,7 @@
 
     /* Labels */
     .contact-form label {
-      margin-top: 14px;
+      margin-top: 18px;
       margin-bottom: 6px;
       display: block;
       font-size: 14px;
@@ -49,7 +47,7 @@
       font-weight: 600;
     }
 
-    /* Inputs + Textarea */
+    /* Inputs */
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -70,15 +68,15 @@
       box-shadow: 0 0 12px #00eaff88;
     }
 
-    /* Medium message box */
-    textarea#message {
-      height: 180px;
-      resize: vertical;
+    /* Bigger message box */
+    textarea[name="message"] {
+      height: 220px;
+      resize: vertical; /* keeps bottom-right resize handle */
     }
 
-    /* Button — Wall Street Tech */
+    /* Button */
     .contact-form button {
-      margin-top: 22px;
+      margin-top: 26px;
       width: 100%;
       padding: 15px;
       background: linear-gradient(135deg, #00eaff, #00bcd4);
@@ -93,7 +91,6 @@
       box-shadow: 0 0 14px #00eaff55;
     }
 
-    /* Hover effect */
     .contact-form button:hover {
       background: linear-gradient(135deg, #00c2dd, #009fb8);
       box-shadow: 0 0 22px #00eaffaa;
@@ -105,10 +102,9 @@
 <body>
 
 <div class="form-wrapper">
-  <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+  <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="contact-form">
     <input type="hidden" name="access_key" value="670930a5-1b93-4fae-94d2-560050eb4500">
     <input type="hidden" name="redirect" value="https://kryptostreetz.github.io/thankyou.html">
-
 
     <label>Name</label>
     <input type="text" name="name" required>
@@ -120,9 +116,10 @@
     <textarea name="message" required></textarea>
 
     <button type="submit">Send Message</button>
-</form>
+  </form>
 </div>
- <script>
+
+<script>
 document.getElementById("contact-form").addEventListener("submit", function() {
     setTimeout(() => this.reset(), 50);
 });
