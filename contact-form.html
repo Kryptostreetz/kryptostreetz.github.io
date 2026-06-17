@@ -31,7 +31,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
   formData.append("email", document.getElementById("email").value);
   formData.append("message", document.getElementById("message").value);
 
-  fetch("https://script.google.com/macros/s/AKfycby1yPua73KaQXqOojBzuqDPvkBw113knRNjZtYWmCN87aXGYnodT2uTqmzXUF5PHf1Y/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbw8jS6M8IRO6yxjXS2fpuJZ0aR8G2eR2q2sWoUIvxD3LP3Ui9Xsh7HLynsaDT_DSp39/exec", {
     method: "POST",
     body: formData
   })
