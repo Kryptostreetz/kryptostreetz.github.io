@@ -6,12 +6,15 @@
     <title>KryptoStreetz</title>
 
     <style>
-      /* Desktop Background (Default) */
+/* Desktop Background (Default) */
 body {
     background: url(homepage-bg-desktop.png) no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
+    color: white;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Mobile Background Override */
@@ -22,60 +25,23 @@ body {
     }
 }
 
-        /* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
+/* Global */
+* {
+    box-sizing: border-box;
 }
 
-/* Dropdown button (looks like your nav links) */
-.dropbtn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 0;
+img, video {
+    max-width: 100%;
+    height: auto;
 }
 
-/* Dropdown content */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #111;
-    min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-    z-index: 1;
+section, div {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-/* Dropdown links */
-.dropdown-content a {
-    color: #00eaff;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #222;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Make button glow on hover */
-.dropdown:hover .dropbtn {
-    color: #00eaff;
-}
-        .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-        /* Header */
-       header {
+/* Header */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,111 +60,141 @@ body {
 }
 
 .logo-img {
-    height: 45px; /* adjust this number to make it smaller or larger */
+    height: 45px;
     width: auto;
     object-fit: contain;
 }
-        .logo-link {
+
+.logo-link {
     display: flex;
     align-items: center;
     text-decoration: none;
 }
-     body {
-    overflow-x: hidden;
-    width: 100%;
+
+/* Navigation */
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-* {
-    box-sizing: border-box;
+nav a:hover {
+    color: #00eaff;
 }
 
-img, video {
-    max-width: 100%;
-    height: auto;
-}
-
-section, div {
-    max-width: 100%;
+nav {
     overflow-x: hidden;
 }
 
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 2px;
-        }
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+    padding: 0;
+}
 
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 16px;
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 160px;
+    z-index: 1000;
+    overflow-x: hidden;
+}
 
-        nav a:hover {
-            color: #00eaff;
-        }
+.dropdown-content a {
+    color: #00eaff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
-        /* Hero Section */
-        .hero {
-            height: 90vh;
-            background: url('https://images.unsplash.com/photo-1526378722484-cc5cddf3c6b0?auto=format&fit=crop&w=1600&q=80')
-                center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+.dropdown-content a:hover {
+    background-color: #222;
+}
 
-        .hero h2 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px black;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        .hero p {
-            font-size: 20px;
-            max-width: 600px;
-            text-shadow: 0 0 10px black;
-        }
+.dropdown:hover .dropbtn {
+    color: #00eaff;
+}
 
-        .cta-btn {
-            margin-top: 25px;
-            padding: 14px 28px;
-            background: #00eaff;
-            color: black;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1526378722484-cc5cddf3c6b0?auto=format&fit=crop&w=1600&q=80')
+        center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
 
-        .cta-btn:hover {
-            background: #00bcd4;
-        }
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px black;
+}
 
-        /* Sections */
-        section {
-            padding: 60px 40px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    text-shadow: 0 0 10px black;
+}
 
-        h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+.cta-btn {
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #00eaff;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .social-bar {
+.cta-btn:hover {
+    background: #00bcd4;
+}
+
+/* Sections */
+section {
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+/* Social Bar */
+.social-bar {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -211,7 +207,7 @@ section, div {
 .social-icon {
     height: 28px;
     width: 28px;
-    filter: invert(1); /* makes icons white for dark theme */
+    filter: invert(1);
     transition: 0.3s;
 }
 
@@ -220,27 +216,17 @@ section, div {
     transform: scale(1.15);
 }
 
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #111;
-            margin-top: 40px;
-            color: #777;
-        }
-     section p, section h3 {
-    text-shadow: 0 0 6px rgba(255,255,255,0.7);
-}
-        /* Make all main text white */
-body {
-    color: white;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+    margin-top: 40px;
+    color: #777;
 }
 
-/* Extra safety: force section text white */
-section, section p, section h3 {
-    color: white;
-}
-        textarea {
+/* Contact Form */
+textarea {
     width: 320px;
     height: 120px;
     padding: 12px;
@@ -251,167 +237,95 @@ section, section p, section h3 {
     color: white;
     resize: none;
 }
-          nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            color: #00eaff;
-        }
-        nav details {
-    overflow: hidden;
-}
-nav {
-    overflow-x: hidden;
-}
-        .dropbtn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 0;
-}
-
-.dropdown {
-    overflow: hidden;
-}
-
-.dropdown-content {
-    overflow-x: hidden;
-}
-        /* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown button */
-.dropbtn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 0;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #111;
-    min-width: 160px;
-    z-index: 1000;
-}
-
-/* Dropdown links */
-.dropdown-content a {
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <a href="https://kryptostreetz.github.io" class="logo-link">
-    <div class="logo-container">
-        <img src="Copilot_20260605_171229.png" alt="Krypto logo" class="logo-img">
-        <img src="Copilot_20260605_171418.png" alt="Streetz logo" class="logo-img">
-    </div>
-            </a>
+<header>
+    <a href="https://kryptostreetz.github.io" class="logo-link">
+        <div class="logo-container">
+            <img src="Copilot_20260605_171229.png" alt="Krypto logo" class="logo-img">
+            <img src="Copilot_20260605_171418.png" alt="Streetz logo" class="logo-img">
+        </div>
+    </a>
+
     <nav>
         <a href="#about">About</a>
-       <div class="dropdown">
-    <button class="dropbtn">Chess</button>
-    <div class="dropdown-content">
-        <a href="https://www.chess.com/member/KryptoStreetz" target="_blank">Chess.com Profile</a>
-    </div>
-</div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Chess</button>
+            <div class="dropdown-content">
+                <a href="https://www.chess.com/member/KryptoStreetz" target="_blank">Chess.com Profile</a>
+            </div>
+        </div>
 
         <a href="crypto.html">Crypto</a>
         <a href="#realtalk">Real Talk</a>
-       <a href="https://twitter.com/KryptoStreetz" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" 
-         alt="Twitter" 
-         style="height:11px; filter: invert(1);"></a>
+
+        <a href="https://twitter.com/KryptoStreetz" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"
+                 alt="Twitter"
+                 style="height:11px; filter: invert(1);">
+        </a>
     </nav>
 </header>
 
+<div class="hero">
+    <h2>Chess × Crypto × Real Talk</h2>
+    <p>The strategy. The privacy. The mindset for the next generation of the internet.</p>
 
-    <!-- Hero -->
-    <div class="hero">
-        <h2>Chess × Crypto × Real Talk</h2>
-        <p>The movement. The mindset. The street‑level intelligence for the digital age.</p>
+    <a class="cta-btn" href="https://www.sns.id/domain/kryptostreetz.sol" target="_blank">
+        Tips @ KryptoStreetz.sol
+    </a>
+</div>
 
-        <!-- YOUR BUTTON TO kryptostreetz.sol -->
-        <a class="cta-btn" href="https://www.sns.id/domain/kryptostreetz.sol" target="_blank">
-    Tips @ KryptoStreetz.sol
-</a>
-
-    </div>
-
-    <!-- About -->
-    <section id="about">
-        <h3>About KryptoStreetz</h3>
-        <p>
-            KryptoStreetz is where strategy meets culture.  
-            We break down the game — on the board, in the markets, and in real life.  
-            Built for thinkers, grinders, and anyone leveling up mentally and financially.
-        </p>
-    </section>
-
-    <!-- Chess -->
-    <section id="chess">
-        <h3>Chess</h3>
-        <p>
-            Chess teaches patience, discipline, and long‑term vision.  
-            We use the board as a blueprint for decision‑making, life strategy, and personal growth.
-        </p>
-    </section>
-
-    <!-- Crypto -->
-    <section id="crypto">
-        <h3>Crypto</h3>
-        <p>
-            From blockchain basics to real‑world applications,  
-            KryptoStreetz breaks down the digital economy in a way the streets can understand.
-        </p>
-    </section>
-
-    <!-- Real Talk -->
-    <section id="realtalk">
-        <h3>Real Talk</h3>
-        <p>
-            No fluff. No filters.  
-            Just honest conversations about money, mindset, and the moves that matter.
-        </p>
-    </section>
-<section id="contact" style="padding: 60px 0;">
-  <div class="container" style="display: flex; justify-content: center;">
-    <div style="width: 100%; max-width: 480px; background: rgba(0,0,0,0.65); padding: 24px 22px 26px; border-radius: 14px; border: 1px solid #00ff88; box-shadow: 0 0 25px rgba(0,255,136,0.18); backdrop-filter: blur(6px);">
-      <h3 style="margin: 0 0 18px; color: #00ff88; font-size: 1.5rem; letter-spacing: 1px; text-align: center;">Contact Me</h3>
-      <iframe src="contact-form.html" style="width: 100%; height: 550px; border: none;"></iframe>
-    </div>
-  </div>
+<section id="about">
+    <h3>About KryptoStreetz</h3>
+    <p>
+        KryptoStreetz is a private, secure, educational space built for thinkers and everyday people.
+        No hype. No scams. No noise.
+        Just clear guidance on Web3, digital ownership, strategy, and leveling up mentally and financially.
+    </p>
 </section>
 
-    <div class="social-bar">
+<section id="chess">
+    <h3>Chess</h3>
+    <p>
+        Chess is the blueprint.
+        It teaches patience, discipline, and long‑term vision — the same skills needed to navigate money,
+        technology, and life in the digital age.
+    </p>
+</section>
+
+<section id="crypto">
+    <h3>Crypto</h3>
+    <p>
+        Web3 is the next version of the internet — built for privacy, ownership, and security.
+        Here, we break down the technology in plain language, showing how it protects your data
+        and empowers you without needing to buy anything.
+    </p>
+</section>
+
+<section id="realtalk">
+    <h3>Real Talk</h3>
+    <p>
+        No filters. No corporate spin.
+        Just honest conversations about money, mindset, digital freedom,
+        and the moves that matter in a world that’s changing fast.
+    </p>
+</section>
+
+<section id="contact" style="padding: 60px 0;">
+    <div class="container" style="display: flex; justify-content: center;">
+        <div style="width: 100%; max-width: 480px; background: rgba(0,0,0,0.65); padding: 24px 22px 26px; border-radius: 14px; border: 1px solid #00ff88; box-shadow: 0 0 25px rgba(0,255,136,0.18); backdrop-filter: blur(6px);">
+            <h3 style="margin: 0 0 18px; color: #00ff88; font-size: 1.5rem; letter-spacing: 1px; text-align: center;">Contact Me</h3>
+            <iframe src="contact-form.html" style="width: 100%; height: 550px; border: none;"></iframe>
+        </div>
+    </div>
+</section>
+
+<div class="social-bar">
     <a href="https://twitter.com/KryptoStreetz" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="Twitter" class="social-icon">
     </a>
@@ -433,14 +347,11 @@ nav {
     </a>
 </div>
 
+<footer>
+    © 2026 KryptoStreetz — All Rights Reserved
+</footer>
 
-
-    <footer>
-        © 2026 KryptoStreetz — All Rights Reserved
-    </footer>
-    
-    <!-- Discord Chatboard -->
-   <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer></script>
 <script>
 window.addEventListener('load', () => {
     new Crate({
